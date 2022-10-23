@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "537495811577",
+    "project_id": "rubic-8e3bc",
+    "storage_bucket": "rubic-8e3bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537495811577:android:5d3db3542afa228bff7928",
+        "android_client_info": {
+          "package_name": "com.dubow.house_rentall_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537495811577-2gtae7biv1qlld5r22u5am68dkj6qtpp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhV-bxIhre3OhMJKk3pd5Sw6RiORu8Me8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537495811577-2gtae7biv1qlld5r22u5am68dkj6qtpp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
