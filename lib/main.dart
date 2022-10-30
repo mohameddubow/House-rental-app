@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:house_rentall_app/model/house_model.dart';
 import 'package:house_rentall_app/screen/details/detail.dart';
 import 'package:house_rentall_app/screen/home/home_page.dart';
+import 'package:house_rentall_app/screen/pages/add_products.dart';
 import 'package:house_rentall_app/screen/pages/login_screen.dart';
 import 'package:house_rentall_app/screen/pages/registration_screen.dart';
 import 'package:house_rentall_app/screen/pages/welcome_screen.dart';
 
-Future main() async{
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
@@ -33,12 +34,13 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: WelcomeScreen.id,
       routes: {
-        WelcomeScreen.id:(context)=> WelcomeScreen(),
-        LoginScreen.id:(context)=> LoginScreen(),
-        RegistrationScreen.id:(context)=> RegistrationScreen(),
-        HomePage.id:(context)=>HomePage(),
-        House.id:(context)=>House(),
-        DetailPage.id:(context)=>DetailPage(),
+        WelcomeScreen.id: (context) => WelcomeScreen(),
+        LoginScreen.id: (context) => LoginScreen(),
+        RegistrationScreen.id: (context) => RegistrationScreen(),
+        HomePage.id: (context) => HomePage(),
+        House.id: (context) => House(),
+        DetailPage.id: (context) => DetailPage(),
+        AddProduct.id: (context) => AddProduct(),
       },
     );
   }

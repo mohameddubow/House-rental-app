@@ -112,9 +112,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         if (newUser != null) {
                           Navigator.pushNamed(context, HomePage.id);
                         }
-setState(() {
-  showSpinner=false;
-});
+                        setState(() {
+                          showSpinner = false;
+                        });
 
                         //Implement registration functionality.
                       } catch (e) {

@@ -1,11 +1,16 @@
+//import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:house_rentall_app/screen/details/detail.dart';
-
+//import 'house_model.dart';
+//import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CardModel extends StatelessWidget {
-  const CardModel({
-    Key? key,
-  }) : super(key: key);
+  late String name;
+  late String price;
+  late String img;
+
+   CardModel(@required this.name,@required this.price,@required this.img,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +25,8 @@ class CardModel extends StatelessWidget {
               Navigator.pushNamed(context, DetailPage.id);
             },
             child: Card(
-              child: Image.asset(
-                'assets/images/rental1.jpg',
+              child: Image.network(
+                img,
                 fit: BoxFit.cover,
               ),
               //elevation: 5,
@@ -39,8 +44,8 @@ class CardModel extends StatelessWidget {
 
             //color: Colors.grey,
             child: ListTile(
-              leading: Text('clothing,'),
-              trailing: Text('Kshs 45000 p.m'),
+              leading: Text(name),
+              trailing: Text(price),
             ),
           ),
         ),
