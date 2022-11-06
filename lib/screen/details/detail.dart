@@ -25,7 +25,6 @@ class _DetailPageState extends State<DetailPage> {
             ContentIntro(),
             const SizedBox(height: 20),
             const SizedBox(height: 20),
-            const About(),
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),

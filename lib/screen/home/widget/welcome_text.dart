@@ -6,11 +6,11 @@ class WelcomeText extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        //crossAxisAlignment: CrossAxisAlignment.start,
+        //mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Hello Mohamed',
+            'Hello Dear Member',
             style: Theme.of(context)
                 .textTheme
                 .bodyText1!

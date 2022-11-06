@@ -1,6 +1,9 @@
-
 import 'package:flutter/material.dart';
+import 'package:house_rentall_app/screen/home/home_page.dart';
+import 'package:house_rentall_app/screen/home/widget/about.dart';
+import 'package:house_rentall_app/screen/home/widget/first_tab.dart';
 import 'package:house_rentall_app/screen/pages/add_products.dart';
+import 'package:house_rentall_app/screen/pages/contact_us.dart';
 //import 'package:house_rentall_app/screen/settings/settings.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -29,38 +32,38 @@ class CustomDrawer extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
+              Navigator.pushNamed(context, HomePage.id);
+
+            },
+            child: ListTile(
+              title: Text('Home'),
+              leading: Icon(Icons.home,color: Colors.blueAccent,),
+            ),
+          ),
+
+          InkWell(
+            onTap: () {
               Navigator.pushNamed(context, AddProduct.id);
             },
             child: ListTile(
               title: Text('Add My Property'),
-              leading: Icon(Icons.castle_outlined),
+              leading: Icon(Icons.castle_outlined,color: Colors.blue,),
             ),
           ),
-          InkWell(
-            onTap: () {},
-            child: ListTile(
-              title: Text('My Properties'),
-              leading: Icon(Icons.apartment_outlined),
-            ),
-          ),
-          InkWell(
-            onTap: () {},
-            child: ListTile(
-              title: Text('Share App'),
-              leading: Icon(Icons.share),
-            ),
-          ),
-
           Divider(),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, ContactUs.id);
+            },
             child: ListTile(
               title: Text('Contact Us'),
-              leading: Icon(Icons.phone_android),
+              leading: Icon(Icons.phone_android,color: Colors.redAccent,),
             ),
           ),
           InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(context, AboutUs.id);
+            },
             child: ListTile(
               title: Text('About Us'),
               leading: Icon(Icons.help, color: Colors.green),

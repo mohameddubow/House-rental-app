@@ -12,9 +12,9 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     // appBar: AppBar(
-       // title: Text('Rubic Homes'),
-       // backgroundColor: Colors.redAccent,
+      // appBar: AppBar(
+      // title: Text('Rubic Homes'),
+      // backgroundColor: Colors.redAccent,
       //),
       body: Container(
         padding: EdgeInsets.all(30.0),
@@ -23,37 +23,32 @@ class _CategoriesState extends State<Categories> {
           children: [
             MyCard(
               title: 'Apartments',
-              icon: Icons.hail,
+              icon: Icons.apartment,
               colour: Colors.blue,
             ),
             MyCard(
               title: 'University Hostels',
-              icon: Icons.hail,
+              icon: Icons.account_balance_sharp,
+              colour: Colors.blue,
+            ),
+            MyCard(
+              title: 'Wedding homes',
+              icon: Icons.holiday_village_outlined,
+              colour: Colors.blue,
+            ),
+            MyCard(
+              title: 'Luxury Homes',
+              icon: Icons.business,
               colour: Colors.blue,
             ),
             MyCard(
               title: 'Bedsitters',
-              icon: Icons.hail,
+              icon: Icons.single_bed_outlined,
               colour: Colors.blue,
             ),
             MyCard(
-              title: 'University Hostels',
-              icon: Icons.hail,
-              colour: Colors.blue,
-            ),
-            MyCard(
-              title: 'University Hostels',
-              icon: Icons.hail,
-              colour: Colors.blue,
-            ),
-            MyCard(
-              title: 'University Hostels',
-              icon: Icons.hail,
-              colour: Colors.blue,
-            ),
-            MyCard(
-              title: 'University Hostels',
-              icon: Icons.hail,
+              title: 'Single Family Homes',
+              icon: Icons.family_restroom_outlined,
               colour: Colors.blue,
             ),
           ],
@@ -68,12 +63,16 @@ class MyCard extends StatelessWidget {
   final IconData icon;
   final MaterialColor colour;
 
-  MyCard({required this.title, required this.icon, required this.colour});
+  MyCard({
+    required this.title,
+    required this.icon,
+    required this.colour,
+  });
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         Navigator.pushNamed(context, House.id);
       },
       child: Card(
@@ -84,12 +83,12 @@ class MyCard extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                size: 70.0,
-                color: colour,
+                size: 35.0,
+                color: Colors.deepOrange,
               ),
               Text(
                 title,
-                style: TextStyle(fontSize: 17.0),
+                style: TextStyle(fontSize: 12.0),
               ),
             ],
           ),

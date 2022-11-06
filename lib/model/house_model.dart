@@ -19,36 +19,44 @@ class _HouseState extends State<House> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: StreamBuilder<QuerySnapshot>(
-        stream: reference.snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
-          if (streamSnapshot.hasData) {
-            return ListView.builder(
-              itemBuilder: (BuildContext, index) {
-                final DocumentSnapshot documentSnapshot =
-                    streamSnapshot.data!.docs[index];
-                return Container(
-                  color: Colors.white,
-                  padding: EdgeInsets.all(5.0),
-                  child: CardModel(
-                    documentSnapshot['name'],
-                    documentSnapshot['Price'].toString(),
-                    documentSnapshot['imgUrl'],
-                  ),
-                );
-              },
-              itemCount: streamSnapshot.data!.docs.length,
-              shrinkWrap: true,
-              padding: EdgeInsets.all(5),
-              scrollDirection: Axis.vertical,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Rubic Homes'),
+          centerTitle: true,
+          backgroundColor: Colors.redAccent,
+        ),
+        body: StreamBuilder<QuerySnapshot>(
+          stream: reference.snapshots(),
+          builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
+            if (streamSnapshot.hasData) {
+              return ListView.builder(
+                itemBuilder: (BuildContext, index) {
+                  final DocumentSnapshot documentSnapshot =
+                      streamSnapshot.data!.docs[index];
+                  return Container(
+                    color: Colors.white,
+                    padding: EdgeInsets.all(5.0),
+                    child: CardModel(
+                      documentSnapshot['name'],
+                      documentSnapshot['location'],
+                      documentSnapshot['ImgUrl'],
+                    ),
+                  );
+                },
+                itemCount: streamSnapshot.data!.docs.length,
+                shrinkWrap: true,
+                padding: EdgeInsets.all(5),
+                scrollDirection: Axis.vertical,
+              );
+            }
+            return const Center(
+              child: CircularProgressIndicator(
+                backgroundColor: Colors.white,
+                color: Colors.blue,
+              ),
             );
-          }
-          return const Center(
-            child: CircularProgressIndicator(
-              color: Colors.blue,
-            ),
-          );
-        },
+          },
+        ),
       ),
     );
   }

@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:house_rentall_app/model/house_model.dart';
 import 'package:house_rentall_app/screen/details/detail.dart';
 import 'package:house_rentall_app/screen/home/home_page.dart';
+import 'package:house_rentall_app/screen/home/widget/about.dart';
 import 'package:house_rentall_app/screen/pages/add_products.dart';
+import 'package:house_rentall_app/screen/pages/contact_us.dart';
 import 'package:house_rentall_app/screen/pages/login_screen.dart';
 import 'package:house_rentall_app/screen/pages/registration_screen.dart';
 import 'package:house_rentall_app/screen/pages/welcome_screen.dart';
@@ -41,6 +43,8 @@ class MyApp extends StatelessWidget {
         House.id: (context) => House(),
         DetailPage.id: (context) => DetailPage(),
         AddProduct.id: (context) => AddProduct(),
+        ContactUs.id: (context) => ContactUs(),
+        AboutUs.id: (context) => AboutUs(),
       },
     );
   }

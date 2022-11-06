@@ -40,12 +40,27 @@ dependencies:
   modal_progress_hud_nsn: ^0.3.0
   image_picker: ^0.8.6
   firebase_storage: ^11.0.3
+  fluttertoast: ^8.1.1
   #contactus: ^1.2.0
   #settings_ui: ^2.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
+  flutter_native_splash: ^2.2.13
+
+flutter_native_splash:
+  color: "#0CF562"
+  image: assets/images/splash.png
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/rubic.jpg"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/images/logo_foreground.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
