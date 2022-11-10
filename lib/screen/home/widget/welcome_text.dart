@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
+
+//------THIS DISPLAYS TWO TEXTS,'HELLO DEAR MEMBER' AND 'FIND YOUR SWEET HOME'
 class WelcomeText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       child: Column(
-        //mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          //------------------TEXT 1--------------------------------
           Text(
             'Hello Dear Member',
             style: Theme.of(context)
@@ -18,6 +20,7 @@ class WelcomeText extends StatelessWidget {
           ),
           SizedBox(height: 10),
           Text(
+            //----------------TEXT 2--------------------------------
             'Find your sweet home',
             style: Theme.of(context)
                 .textTheme

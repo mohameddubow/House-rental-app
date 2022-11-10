@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  //----------------CREATES A FIREBASE INSTANCE AND ASSIGN IT TO '_auth' object---------------------
   final _auth = FirebaseAuth.instance;
   late User loggedInUser;
 
@@ -23,12 +24,12 @@ class _HomePageState extends State<HomePage> {
     getCurrentUser();
   }
 
+  //--------THIS method CHECKS WHETHER THEIR IS A CURRENT USER SIGNED IN-----------------
   void getCurrentUser() async {
     try {
       final user = await _auth.currentUser;
       if (user != null) {
         loggedInUser = user;
-        print(loggedInUser.email);
       }
     } catch (e) {
       print(e);
@@ -36,7 +37,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   int _currentIndex = 0;
-  List<Widget> pages = const [
+  //--------------LIST OF TABS-----------------------------
+  List<Widget> pages = [
     First_tab_page(),
     Categories(),
     Settings(),
@@ -45,14 +47,18 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
+      //--------------APPBAR-----------------------
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: Text('RUBIC HOUSES'),
       ),
+      //-------------THE DRAWER----------------------------------------
       drawer: CustomDrawer(),
+      //--------------------THE BODY TOGGLES ACCORDING TO WHICH TAB THE USER TOUCHES-----------
       body: pages[_currentIndex],
+      //-----------------------BOTTOM NAVIGATION BAR-----------------------------------
+      //-------------THIS DISPLAYS A BOTTOM NAVIGATION BAR WITH THREE ITEMS----------------------
       bottomNavigationBar: BottomNavigationBar(
-        //backgroundColor: Colors.black,
         elevation: 30.0,
         currentIndex: _currentIndex,
         onTap: (int index) {
@@ -60,15 +66,19 @@ class _HomePageState extends State<HomePage> {
             _currentIndex = index;
           });
         },
+        //------------------------THE ITEMS/TABS---------------------------
         items: [
+          //-----------THE HOME TAB----------------------------------------
           BottomNavigationBarItem(
             label: 'Home',
             icon: Icon(Icons.home),
           ),
+          //------------THE CATEGORIES TAB---------------------------------
           BottomNavigationBarItem(
             label: 'Categories',
             icon: Icon(Icons.assured_workload),
           ),
+          //--------------THE SETTINGS TAB---------------------------------
           BottomNavigationBarItem(
             label: 'Settings',
             icon: Icon(Icons.settings),

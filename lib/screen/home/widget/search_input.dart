@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//------------THIS IS THE REFACTORED CODE FOR THE SEARCH BAR ON THE HOMEPAGE---------------------
 class SearchInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,9 @@ class SearchInput extends StatelessWidget {
           hintText: 'Search your home...',
           prefixIcon: Container(
             padding: EdgeInsets.all(4),
-            child: IconButton(
+            child:
+            //----------------SEARCH ICON--------------------------
+            IconButton(
               onPressed: () {},
               icon: Icon(Icons.search),
             ),

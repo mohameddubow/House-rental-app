@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:house_rentall_app/model/house_model.dart';
 
+
+//--------------------THIS PAGE CONSTITUTES THE CATEGORIES SCREEN--------------------------
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
 
@@ -12,15 +14,19 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      // title: Text('Rubic Homes'),
-      // backgroundColor: Colors.redAccent,
-      //),
+      //-------------APPBAR-----------------------------------------------
+       appBar: AppBar(
+      title: Text('Rubic Homes'),
+      backgroundColor: Colors.redAccent,
+      ),
+      //------------BODY-------------------------------------------------
       body: Container(
         padding: EdgeInsets.all(30.0),
         child: GridView.count(
           crossAxisCount: 2,
           children: [
+
+            //This contains an implementation of the Card class,...mulTiple Cards are created from the same class
             MyCard(
               title: 'Apartments',
               icon: Icons.apartment,
@@ -58,6 +64,12 @@ class _CategoriesState extends State<Categories> {
   }
 }
 
+
+//-------------------------------------------------------------------------------------------------
+
+//This is a refactored card,...I created a Card model class for the Categories screen so that I can
+//reuse the code for the Card multiple areas without repeating myself
+//------------------------------------------------------------------------------------------------
 class MyCard extends StatelessWidget {
   final String title;
   final IconData icon;
@@ -75,17 +87,21 @@ class MyCard extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, House.id);
       },
-      child: Card(
+      child:
+      //----------------------CARD------------
+      Card(
         margin: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              //-----------------ICON--------------------
               Icon(
                 icon,
                 size: 35.0,
                 color: Colors.deepOrange,
               ),
+              //-----------------TITLE--------------------
               Text(
                 title,
                 style: TextStyle(fontSize: 12.0),

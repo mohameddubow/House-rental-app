@@ -1,30 +1,38 @@
-//import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:house_rentall_app/screen/details/detail.dart';
-//import 'house_model.dart';
-//import 'package:cloud_firestore/cloud_firestore.dart';
-
+//----------THIS IS A CARD MODEL CLASS,IT IS A BLUEPRINT FOR THE HOUSE CLASS THAT COMES AFTER THE USER PRESSES ONE OF THE CATEGORIES-----------------------
 class CardModel extends StatelessWidget {
   late String name;
   late String loc;
   late String img;
+  late int price;
+  late int phone;
 
   CardModel(
     @required this.name,
     @required this.loc,
     @required this.img,
+    @required this.price,
+    @required this.phone,
   );
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       splashColor: Colors.red,
-      onTap: () {Navigator.pushNamed(context, DetailPage.id);},
+      onTap: () {
+        Navigator.pushNamed(context, DetailPage.id, arguments: {
+          //---------------THIS PASSES THE DATA TO THE NEXT SCREEN, THE DETAILPAGE---------
+          'newprice': price,
+          'newphone ': phone,
+        });
+      },
       child: Container(
         child: Column(
           children: [
-//Card 1
+            //--------------CREATES A CARD-------------
             Card(
+              //------------THE PROPERTIES OF THE CARD-------------
               margin: EdgeInsets.only(bottom: 2),
               clipBehavior: Clip.antiAlias,
               shape: RoundedRectangleBorder(
@@ -32,7 +40,9 @@ class CardModel extends StatelessWidget {
                   Radius.circular(18),
                 ),
               ),
+              //------------THE PROPERTIES OF THE CARD-------------
               child: Container(
+                //---------------IMAGE--------------------
                 child: Image.network(
                   img,
                 ),
@@ -42,10 +52,12 @@ class CardModel extends StatelessWidget {
               color: Colors.deepOrange.shade50.withOpacity(0.1),
               child: Container(
                 child: Row(
+                  //---------ROW CONTAINING AN ICON AND PRICE-------------------
                   children: [
+                    //--------------ICON-------------------------
                     Icon(Icons.location_on_outlined),
                     Text(
-                      'Bungalow, Westlands',
+                      loc,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black45,
@@ -54,7 +66,8 @@ class CardModel extends StatelessWidget {
                     Spacer(),
                     Spacer(),
                     Text(
-                      loc,
+                      //-----------DISPLAYS THE PRICE----------------
+                      ('Kshs $price'.toString()),
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
@@ -78,42 +91,3 @@ class CardModel extends StatelessWidget {
     );
   }
 }
-
-/**Stack(
-      alignment: AlignmentDirectional.bottomStart,
-      //clipBehavior: Clip.antiAliasWithSaveLayer,
-      children: [
-        Material(
-          child: InkWell(
-            splashColor: Colors.redAccent,
-            onTap: () {
-              Navigator.pushNamed(context, DetailPage.id);
-            },
-            child: Card(
-              clipBehavior: Clip.antiAlias,
-              child: Image.network(
-                img,
-                fit: BoxFit.cover,
-              ),
-              //elevation: 5,
-              margin: EdgeInsets.all(10),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Material(
-            color: Colors.deepOrange.shade50.withOpacity(0.1),
-
-            //color: Colors.grey,
-            child: ListTile(
-              leading: Text(name,style: TextStyle(color: Colors.white, fontSize: 24),),
-              trailing: Text(loc),
-            ),
-          ),
-        ),
-      ],
-    **/ //);
