@@ -1,6 +1,6 @@
 # house_rentall_app
 
-A new Flutter project.
+A new Flutter project about House Rental System.
 
 ## Getting Started
 
