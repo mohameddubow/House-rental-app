@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:house_rentall_app/screen/pages/login_screen.dart';
 import 'package:house_rentall_app/screen/pages/registration_screen.dart';
 
+// -----------------THE WELCOME SCREEN THAT COMES IMMEDIATELY AFTER OPENING THE APP-----------
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
 
@@ -14,7 +15,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
+      body:
+      //--------THE BACKGROUND IMAGE OF THE SCREEN---------------
+      Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/rental7.jpg'),
@@ -29,6 +32,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             children: <Widget>[
               Row(
                 children: <Widget>[
+                  //----------THE RUBIC APP TEXT---------------------
                   Text(
                     'Rubic App',
                     textAlign: TextAlign.center,
@@ -43,6 +47,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               SizedBox(
                 height: 48.0,
               ),
+
+              //-----------THE LOG-IN BUTTON---------------------
+              //----------THE USER ONLY LOG-INS IF HE OR SHE IS ALREADY A REGISTERED USER---------
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
@@ -51,6 +58,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   borderRadius: BorderRadius.circular(30.0),
                   child: MaterialButton(
                     onPressed: () {
+                      //-------NAVIGATES TO THE NEXT SCREEN IF VERIFIED--------------
                       Navigator.pushNamed(context, LoginScreen.id);
                     },
                     minWidth: 200.0,
@@ -62,6 +70,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                 ),
               ),
+              //--------------THE REGISTER BUTTON--------------------
+              //-----THE USER ONLY COMES HERE IF HE OR SHE HAS NOT PREVIOUSLY REGISTERED WITH
+              // THE APPLICATION
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.0),
                 child: Material(
@@ -70,6 +81,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   elevation: 5.0,
                   child: MaterialButton(
                     onPressed: () {
+                      //---NAVIGATES TO THE REGISTRATION SCREEN AND THE USER REGISTERS----
                       Navigator.pushNamed(context, RegistrationScreen.id);
                     },
                     minWidth: 200.0,

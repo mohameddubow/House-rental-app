@@ -101,7 +101,7 @@ class _DetailPageState extends State<DetailPage> {
                   text: TextSpan(
                     children: [
                       //--------------------------------------------------------
-                      //THIS DISPLAYS THE PRICE ON THE SCREEN
+                      //THIS DISPLAYS THE RENT PRICE ON THE SCREEN
                       TextSpan(
                         text: 'Ksh $newPrice'.toString(),
                         style: Theme.of(context).textTheme.headline1!.copyWith(

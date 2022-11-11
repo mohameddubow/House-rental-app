@@ -254,6 +254,11 @@ class _AddPropertyState extends State<AddProperty> {
                 onPressed: () {
                   //THE uploadFile METHOD GETS CALLED
                   uploadFile();
+                  Fluttertoast.showToast(
+                    msg: "Uploaded Successfully",
+                    textColor: Colors.black,
+                    backgroundColor: Colors.white,
+                  );
                   Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(

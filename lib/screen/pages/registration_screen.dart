@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:house_rentall_app/screen/home/home_page.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
+
+//--------------------------******REGISTRATION SCREEN*******-----------------------------------------
 class RegistrationScreen extends StatefulWidget {
   static String id = 'registration_screen';
 
@@ -11,6 +14,7 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  //-------------VARIABLES----------------------
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
   late String email;
@@ -20,14 +24,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
+      body:
+          //-------------BACKGROUND IMAGE OF THE REGISTRATION SCREEN---------------
+          Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/rental6.jpg'),
             fit: BoxFit.cover,
           ),
         ),
-        child: ModalProgressHUD(
+        child:
+            //-----------THE SPINNER OR THE CIRCULAR INDICATOR---------------------
+            ModalProgressHUD(
           inAsyncCall: showSpinner,
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 24.0),
@@ -38,13 +46,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 SizedBox(
                   height: 48.0,
                 ),
+                //-----------------EMAIL TEXTFIELD--------------------
                 TextFormField(
                   style: TextStyle(color: Colors.black, fontSize: 18),
                   keyboardType: TextInputType.emailAddress,
                   textAlign: TextAlign.center,
                   onChanged: (value) {
+                    //--------CAPTURE THE VALUE INPUTTED BY THE USER ON THE TEXTFIELD
                     email = value;
                   },
+                  //---------EMAIL TEXTFIELD DECORATION--------------
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -70,13 +81,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 SizedBox(
                   height: 8.0,
                 ),
+                //---------------PASSWORD TEXTFIELD-------------------------------
                 TextFormField(
                   style: TextStyle(color: Colors.black, fontSize: 17),
                   obscureText: true,
                   textAlign: TextAlign.center,
+                  //--------ASSIGN AS PASSWORD THE VALUE INPUTTED BY THE USER
                   onChanged: (value) {
                     password = value;
                   },
+                  //------------PASSWORD TEXTFIELD DECORATION-----------------
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
@@ -102,9 +116,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 SizedBox(
                   height: 24.0,
                 ),
+                //----------THE REGISTER BUTTON----------------
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 16.0),
-                  child: Material(
+                  child:
+                      //--------THE BUTTON----------
+                      Material(
                     color: Colors.blueAccent,
                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     elevation: 5.0,
@@ -113,13 +130,19 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         setState(() {
                           showSpinner = true;
                         });
-
+                        //--------TRY/CATCH BLOCK
                         try {
+                          //CREATE A NEW USER WITH THE EMAIL AND PASSWORD ENTERED
                           final newUser =
                               await _auth.createUserWithEmailAndPassword(
                                   email: email, password: password);
-
+                          //----IF THE NEW USER IS NOT EQUAL TO NULL, THEN PROCEED TO THE HOMESCREEN
                           if (newUser != null) {
+                            Fluttertoast.showToast(
+                              msg: "Successfull Registration",
+                              textColor: Colors.black,
+                              backgroundColor: Colors.white,
+                            );
                             Navigator.pushNamed(context, HomePage.id);
                           }
                           setState(() {
