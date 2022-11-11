@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 //-------------------ADD PROPERTY FOR THE ADMIN SECTION-------------------------------
 
@@ -16,6 +17,11 @@ class AddProperty extends StatefulWidget {
 }
 
 class _AddPropertyState extends State<AddProperty> {
+  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
+  // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
+  final CollectionReference reference =
+      FirebaseFirestore.instance.collection('Apartments');
+//--------------VARIABLES-------------------------------------------
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController propertyNameController = TextEditingController();
   TextEditingController priceController = TextEditingController();
@@ -55,7 +61,7 @@ class _AddPropertyState extends State<AddProperty> {
     Reference referenceRoot = FirebaseStorage.instance.ref();
 
     //-----------This one we enter the firestore storage root and create a collection called images----------
-    Reference referenceDirImages = referenceRoot.child('images');
+    Reference referenceDirImages = referenceRoot.child('');
 
     //----------We then create a reference of the image being uploaded to the images collection---------
     Reference referenceImageToupload = referenceDirImages.child(image!.path);
@@ -247,17 +253,45 @@ class _AddPropertyState extends State<AddProperty> {
 
 //---------------------******* THE END OF THE TEXTFIELDS************---------------------------------
 
-            //-------This down below is the Button for uploading the image and the fellow properties to the database
+//-----------------------------*******UPLOAD FILE BUTTON********----------------
+
+            //-------This down below is the BUTTON for UPLOADING the image and the fellow properties to the database
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: ElevatedButton(
                 onPressed: () {
                   //THE uploadFile METHOD GETS CALLED
                   uploadFile();
+                  if (imageUrl.isEmpty) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Please upload an image '),
+                      ),
+                    );
+                    return;
+                  }
+                  if (_formKey.currentState!.validate()) {
+                    String propertyName = propertyNameController.text;
+                    String priceRent = priceController.text;
+                    String propertyLocation = locationController.text;
+                    String phoneNumber = phoneNumberController.text;
+
+                    //-------CREATE A MAP OF DATA------------
+                    Map<String, String> dataToSend = {
+                      'name': propertyName,
+                      'price': priceRent,
+                      'ImgUrl': imageUrl,
+                      'phone': phoneNumber,
+                      'location': propertyLocation,
+                    };
+                    //------------ADD A NEW ITEM------------
+                    reference.add(dataToSend);
+                  }
+
                   Fluttertoast.showToast(
                     msg: "Uploaded Successfully",
-                    textColor: Colors.black,
-                    backgroundColor: Colors.white,
+                    textColor: Colors.white,
+                    backgroundColor: Colors.black,
                   );
                   Navigator.pop(context);
                 },

@@ -13,8 +13,8 @@ class House extends StatefulWidget {
 
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
 class _HouseState extends State<House> {
-
-  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments', SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
+  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
+  // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
   final CollectionReference reference =
       FirebaseFirestore.instance.collection('Apartments');
 
@@ -31,8 +31,8 @@ class _HouseState extends State<House> {
         ),
         //------------BODY---------------------------
         body:
-        //HERE WE USE A STREAMBUILDER
-        StreamBuilder<QuerySnapshot>(
+            //HERE WE USE A STREAMBUILDER
+            StreamBuilder<QuerySnapshot>(
           //-----------HERE WE CAPTURE A SNAPSHOT OF THE RETURNING DATA FROM THE COLLECTION STREAM--------
           stream: reference.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
