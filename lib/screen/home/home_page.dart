@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:house_rentall_app/screen/categories/categories.dart';
 import 'package:house_rentall_app/screen/home/widget/first_tab.dart';
 import '/screen/home/widget/drawer.dart';
-import 'package:house_rentall_app/screen/settings/settings.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget {
@@ -41,7 +40,6 @@ class _HomePageState extends State<HomePage> {
   List<Widget> pages = [
     First_tab_page(),
     Categories(),
-    Settings(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -77,11 +75,6 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             label: 'Categories',
             icon: Icon(Icons.assured_workload),
-          ),
-          //--------------THE SETTINGS TAB---------------------------------
-          BottomNavigationBarItem(
-            label: 'Settings',
-            icon: Icon(Icons.settings),
           ),
         ],
       ),

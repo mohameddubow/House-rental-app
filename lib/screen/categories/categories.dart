@@ -14,11 +14,6 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //-------------APPBAR-----------------------------------------------
-       appBar: AppBar(
-      title: Text('Rubic Homes'),
-      backgroundColor: Colors.redAccent,
-      ),
       //------------BODY-------------------------------------------------
       body: Container(
         padding: EdgeInsets.all(30.0),
@@ -104,7 +99,7 @@ class MyCard extends StatelessWidget {
               //-----------------TITLE--------------------
               Text(
                 title,
-                style: TextStyle(fontSize: 12.0),
+                style: TextStyle(fontSize: 17.0),
               ),
             ],
           ),
