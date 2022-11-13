@@ -29,8 +29,11 @@ class _AddPropertyState extends State<AddProperty> {
   TextEditingController phoneNumberController = TextEditingController();
 
   File? image; //---This is a variable for storing the image of the file Picker
-
-  //-----------This method picks an image from the gallery of the device-----------------
+//******************************************************************************************
+  //--------THE TWO METHODS, ONE FOR PICKING A FILE OR IMAGE FROM THE LOCAL DEVICE,
+  //-------THE OTHER ONE FOR UPLOADING THE FILES OR IMAGE
+  //****************************************************************************************
+  //-----------This method PICKS an image from the gallery of the device-----------------
   Future pickImage() async {
     //----------TRY/CATCH BLOCK--------------------
     try {
@@ -79,7 +82,7 @@ class _AddPropertyState extends State<AddProperty> {
   }
 
   String imageUrl = '';
-
+//------------------------------------------------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,7 +134,7 @@ class _AddPropertyState extends State<AddProperty> {
               child: Text(
                 'Enter a property name not more than 30 characters at maximum',
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.red, fontSize: 12),
+                style: TextStyle(color: Colors.green[400], fontSize: 17),
               ),
             ),
 

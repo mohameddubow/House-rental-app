@@ -3,6 +3,7 @@ import 'package:house_rentall_app/screen/home/home_page.dart';
 import 'package:house_rentall_app/screen/home/widget/about.dart';
 import 'package:house_rentall_app/screen/pages/add_properties.dart';
 import 'package:house_rentall_app/screen/pages/contact_us.dart';
+import 'package:house_rentall_app/services.dart';
 
 //----------------------------------------------------------------------------------------
 //THIS IS THE CODE FOR THE CUSTOM DRAWER OR THE THREE SMALL LINES UP AT THE HOMEPAGE THAT HAVE EXTRA INFO
@@ -53,7 +54,8 @@ class CustomDrawer extends StatelessWidget {
          //----------------------ADD MY PROPERTY------------------------
           InkWell(
             onTap: () {
-              Navigator.pushNamed(context, AddProperty.id);
+              UserManagement().authorizeAccess(context);
+              //Navigator.pushNamed(context, AddProperty.id);
             },
             child: ListTile(
               title: Text('Add My Property'),
