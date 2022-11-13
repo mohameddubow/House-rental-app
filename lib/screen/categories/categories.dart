@@ -27,27 +27,27 @@ class _CategoriesState extends State<Categories> {
               icon: Icons.apartment,
               colour: Colors.blue,
             ),
-            MyCard(
+            MyCard4(
               title: 'University Hostels',
               icon: Icons.account_balance_sharp,
               colour: Colors.blue,
             ),
-            MyCard(
+            MyCard5(
               title: 'Wedding homes',
               icon: Icons.holiday_village_outlined,
               colour: Colors.blue,
             ),
-            MyCard(
+            MyCard2(
               title: 'Luxury Homes',
               icon: Icons.business,
               colour: Colors.blue,
             ),
-            MyCard(
+            MyCard1(
               title: 'Bedsitters',
               icon: Icons.single_bed_outlined,
               colour: Colors.blue,
             ),
-            MyCard(
+            MyCard3(
               title: 'Single Family Homes',
               icon: Icons.family_restroom_outlined,
               colour: Colors.blue,
@@ -100,6 +100,226 @@ class MyCard extends StatelessWidget {
               Text(
                 title,
                 style: TextStyle(fontSize: 17.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyCard1 extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final MaterialColor colour;
+
+  MyCard1({
+    required this.title,
+    required this.icon,
+    required this.colour,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, BedSitter.id);
+      },
+      child:
+      //----------------------CARD------------
+      Card(
+        margin: EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              //-----------------ICON--------------------
+              Icon(
+                icon,
+                size: 35.0,
+                color: Colors.deepOrange,
+              ),
+              //-----------------TITLE--------------------
+              Text(
+                title,
+                style: TextStyle(fontSize: 12.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyCard2 extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final MaterialColor colour;
+
+  MyCard2({
+    required this.title,
+    required this.icon,
+    required this.colour,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, LuxuryHomes.id);
+      },
+      child:
+      //----------------------CARD------------
+      Card(
+        margin: EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              //-----------------ICON--------------------
+              Icon(
+                icon,
+                size: 35.0,
+                color: Colors.deepOrange,
+              ),
+              //-----------------TITLE--------------------
+              Text(
+                title,
+                style: TextStyle(fontSize: 12.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyCard3 extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final MaterialColor colour;
+
+  MyCard3({
+    required this.title,
+    required this.icon,
+    required this.colour,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, SingleFamilyHomes.id);
+      },
+      child:
+      //----------------------CARD------------
+      Card(
+        margin: EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              //-----------------ICON--------------------
+              Icon(
+                icon,
+                size: 35.0,
+                color: Colors.deepOrange,
+              ),
+              //-----------------TITLE--------------------
+              Text(
+                title,
+                style: TextStyle(fontSize: 12.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyCard4 extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final MaterialColor colour;
+
+  MyCard4({
+    required this.title,
+    required this.icon,
+    required this.colour,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, UniversityHotels.id);
+      },
+      child:
+      //----------------------CARD------------
+      Card(
+        margin: EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              //-----------------ICON--------------------
+              Icon(
+                icon,
+                size: 35.0,
+                color: Colors.deepOrange,
+              ),
+              //-----------------TITLE--------------------
+              Text(
+                title,
+                style: TextStyle(fontSize: 12.0),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyCard5 extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final MaterialColor colour;
+
+  MyCard5({
+    required this.title,
+    required this.icon,
+    required this.colour,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.pushNamed(context, WeddingHomes.id);
+      },
+      child:
+      //----------------------CARD------------
+      Card(
+        margin: EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              //-----------------ICON--------------------
+              Icon(
+                icon,
+                size: 35.0,
+                color: Colors.deepOrange,
+              ),
+              //-----------------TITLE--------------------
+              Text(
+                title,
+                style: TextStyle(fontSize: 12.0),
               ),
             ],
           ),
