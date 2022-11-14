@@ -78,7 +78,6 @@ class _HouseState extends State<House> {
   }
 }
 
-
 class BedSitter extends StatefulWidget {
   static String id = 'bedsitter_screen';
 
@@ -92,7 +91,7 @@ class _BedSitterState extends State<BedSitter> {
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
-  FirebaseFirestore.instance.collection('Bedsitters');
+      FirebaseFirestore.instance.collection('Bedsitters');
 
   //--------HERE WE BUILD A BODY FOR THE HOUSE SCREEN--------------------
   @override
@@ -107,8 +106,8 @@ class _BedSitterState extends State<BedSitter> {
         ),
         //------------BODY---------------------------
         body:
-        //HERE WE USE A STREAMBUILDER
-        StreamBuilder<QuerySnapshot>(
+            //HERE WE USE A STREAMBUILDER
+            StreamBuilder<QuerySnapshot>(
           //-----------HERE WE CAPTURE A SNAPSHOT OF THE RETURNING DATA FROM THE COLLECTION STREAM--------
           stream: reference.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
@@ -120,7 +119,7 @@ class _BedSitterState extends State<BedSitter> {
                 itemBuilder: (BuildContext, index) {
                   //HERE WE CAPTURE A DOCUMENT SNAPSHOT FROM THE DOCUMENTS
                   final DocumentSnapshot documentSnapshot =
-                  streamSnapshot.data!.docs[index];
+                      streamSnapshot.data!.docs[index];
                   return Container(
                     color: Colors.white,
                     padding: EdgeInsets.all(5.0),
@@ -166,7 +165,7 @@ class _LuxuryHomesState extends State<LuxuryHomes> {
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
-  FirebaseFirestore.instance.collection('Luxury Homes');
+      FirebaseFirestore.instance.collection('Luxury Homes');
 
   //--------HERE WE BUILD A BODY FOR THE HOUSE SCREEN--------------------
   @override
@@ -181,8 +180,8 @@ class _LuxuryHomesState extends State<LuxuryHomes> {
         ),
         //------------BODY---------------------------
         body:
-        //HERE WE USE A STREAMBUILDER
-        StreamBuilder<QuerySnapshot>(
+            //HERE WE USE A STREAMBUILDER
+            StreamBuilder<QuerySnapshot>(
           //-----------HERE WE CAPTURE A SNAPSHOT OF THE RETURNING DATA FROM THE COLLECTION STREAM--------
           stream: reference.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
@@ -194,7 +193,7 @@ class _LuxuryHomesState extends State<LuxuryHomes> {
                 itemBuilder: (BuildContext, index) {
                   //HERE WE CAPTURE A DOCUMENT SNAPSHOT FROM THE DOCUMENTS
                   final DocumentSnapshot documentSnapshot =
-                  streamSnapshot.data!.docs[index];
+                      streamSnapshot.data!.docs[index];
                   return Container(
                     color: Colors.white,
                     padding: EdgeInsets.all(5.0),
@@ -227,9 +226,6 @@ class _LuxuryHomesState extends State<LuxuryHomes> {
   }
 }
 
-
-
-
 class SingleFamilyHomes extends StatefulWidget {
   static String id = 'single_family_home_screen';
 
@@ -243,7 +239,7 @@ class _SingleFamilyHomesState extends State<SingleFamilyHomes> {
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
-  FirebaseFirestore.instance.collection('Single family homes');
+      FirebaseFirestore.instance.collection('Single family homes');
 
   //--------HERE WE BUILD A BODY FOR THE HOUSE SCREEN--------------------
   @override
@@ -258,8 +254,8 @@ class _SingleFamilyHomesState extends State<SingleFamilyHomes> {
         ),
         //------------BODY---------------------------
         body:
-        //HERE WE USE A STREAMBUILDER
-        StreamBuilder<QuerySnapshot>(
+            //HERE WE USE A STREAMBUILDER
+            StreamBuilder<QuerySnapshot>(
           //-----------HERE WE CAPTURE A SNAPSHOT OF THE RETURNING DATA FROM THE COLLECTION STREAM--------
           stream: reference.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
@@ -271,7 +267,7 @@ class _SingleFamilyHomesState extends State<SingleFamilyHomes> {
                 itemBuilder: (BuildContext, index) {
                   //HERE WE CAPTURE A DOCUMENT SNAPSHOT FROM THE DOCUMENTS
                   final DocumentSnapshot documentSnapshot =
-                  streamSnapshot.data!.docs[index];
+                      streamSnapshot.data!.docs[index];
                   return Container(
                     color: Colors.white,
                     padding: EdgeInsets.all(5.0),
@@ -312,12 +308,12 @@ class UniversityHotels extends StatefulWidget {
 }
 
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
-class _UniversityHotelsState extends State<UniversityHotels > {
+class _UniversityHotelsState extends State<UniversityHotels> {
   //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
-  FirebaseFirestore.instance.collection('University hostels');
+      FirebaseFirestore.instance.collection('University hostels');
 
   //--------HERE WE BUILD A BODY FOR THE HOUSE SCREEN--------------------
   @override
@@ -332,8 +328,8 @@ class _UniversityHotelsState extends State<UniversityHotels > {
         ),
         //------------BODY---------------------------
         body:
-        //HERE WE USE A STREAMBUILDER
-        StreamBuilder<QuerySnapshot>(
+            //HERE WE USE A STREAMBUILDER
+            StreamBuilder<QuerySnapshot>(
           //-----------HERE WE CAPTURE A SNAPSHOT OF THE RETURNING DATA FROM THE COLLECTION STREAM--------
           stream: reference.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
@@ -345,7 +341,7 @@ class _UniversityHotelsState extends State<UniversityHotels > {
                 itemBuilder: (BuildContext, index) {
                   //HERE WE CAPTURE A DOCUMENT SNAPSHOT FROM THE DOCUMENTS
                   final DocumentSnapshot documentSnapshot =
-                  streamSnapshot.data!.docs[index];
+                      streamSnapshot.data!.docs[index];
                   return Container(
                     color: Colors.white,
                     padding: EdgeInsets.all(5.0),
@@ -377,7 +373,6 @@ class _UniversityHotelsState extends State<UniversityHotels > {
     );
   }
 }
-
 
 class WeddingHomes extends StatefulWidget {
   static String id = 'wedding_homes';
@@ -392,7 +387,7 @@ class _WeddingHomesState extends State<WeddingHomes> {
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
-  FirebaseFirestore.instance.collection('Wedding homes');
+      FirebaseFirestore.instance.collection('Wedding homes');
 
   //--------HERE WE BUILD A BODY FOR THE HOUSE SCREEN--------------------
   @override
@@ -407,8 +402,8 @@ class _WeddingHomesState extends State<WeddingHomes> {
         ),
         //------------BODY---------------------------
         body:
-        //HERE WE USE A STREAMBUILDER
-        StreamBuilder<QuerySnapshot>(
+            //HERE WE USE A STREAMBUILDER
+            StreamBuilder<QuerySnapshot>(
           //-----------HERE WE CAPTURE A SNAPSHOT OF THE RETURNING DATA FROM THE COLLECTION STREAM--------
           stream: reference.snapshots(),
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
@@ -420,7 +415,7 @@ class _WeddingHomesState extends State<WeddingHomes> {
                 itemBuilder: (BuildContext, index) {
                   //HERE WE CAPTURE A DOCUMENT SNAPSHOT FROM THE DOCUMENTS
                   final DocumentSnapshot documentSnapshot =
-                  streamSnapshot.data!.docs[index];
+                      streamSnapshot.data!.docs[index];
                   return Container(
                     color: Colors.white,
                     padding: EdgeInsets.all(5.0),
@@ -452,19 +447,3 @@ class _WeddingHomesState extends State<WeddingHomes> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

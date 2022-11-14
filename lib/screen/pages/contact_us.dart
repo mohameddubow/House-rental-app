@@ -10,14 +10,14 @@ class ContactUs extends StatelessWidget {
     return
         //This container sets the background color of our page thereby distinguishing from the color of the cards
         Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.redAccent,
-            centerTitle: true,
-            title: Text('Contact us'),
-          ),
-          body: Container(
-      color: Colors.grey[300],
-      child:
+      appBar: AppBar(
+        backgroundColor: Colors.redAccent,
+        centerTitle: true,
+        title: Text('Contact us'),
+      ),
+      body: Container(
+        color: Colors.grey[300],
+        child:
             //This aligns the contents of the page in a scrolling List
             ListView(
           children: [
@@ -147,8 +147,8 @@ class ContactUs extends StatelessWidget {
               ),
             ),
           ],
+        ),
       ),
-    ),
-        );
+    );
   }
 }

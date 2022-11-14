@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-
-    //-------------------ABOUT US----------------------------------------------------
+//-------------------ABOUT US----------------------------------------------------
 //THIS PAGE CREATES THE ABOUT US PART OF OUR APPLICATION
 class AboutUs extends StatelessWidget {
   static String id = 'about_us_screen';
@@ -10,7 +9,7 @@ class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-     //--------------------------------------------------------------------------------
+      //--------------------------------------------------------------------------------
       //APPBAR
       appBar: AppBar(
         backgroundColor: Colors.redAccent,
@@ -28,9 +27,9 @@ class AboutUs extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child:
-              //----------------------------------------------------------------
-              //THIS CARD STORES THE DEVELOPER DETAILS
-              Card(
+                  //----------------------------------------------------------------
+                  //THIS CARD STORES THE DEVELOPER DETAILS
+                  Card(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -71,9 +70,9 @@ class AboutUs extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child:
-              //------------------------------------------------------------------------------
-             //THIS CARD STORES A BRIEF DESCRIPTION OF RUBIC HOMES
-              Card(
+                  //------------------------------------------------------------------------------
+                  //THIS CARD STORES A BRIEF DESCRIPTION OF RUBIC HOMES
+                  Card(
                 child: Padding(
                   padding: const EdgeInsets.all(15.0),
                   child: Text(
@@ -87,9 +86,9 @@ class AboutUs extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(42.0),
                 child:
-                //---------------------------------------------------------------------------
-                //THIS TEXT IS THE ALL RIGHTS RESERVED
-                Text(
+                    //---------------------------------------------------------------------------
+                    //THIS TEXT IS THE ALL RIGHTS RESERVED
+                    Text(
                   '@2022 Rubic Homes.All Rights Reserved.',
                   style: TextStyle(
                       color: Colors.black,

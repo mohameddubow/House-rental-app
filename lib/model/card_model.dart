@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:house_rentall_app/screen/details/detail.dart';
+
 //----------THIS IS A CARD MODEL CLASS,IT IS A BLUEPRINT FOR THE HOUSE CLASS THAT COMES AFTER THE USER PRESSES ONE OF THE CATEGORIES-----------------------
 class CardModel extends StatelessWidget {
   late String name;
   late String loc;
   late String img;
-  late int price;
-  late int phone;
+  late var price;
+  late String phone;
 
   CardModel(
     @required this.name,

@@ -17,10 +17,32 @@ class AddProperty extends StatefulWidget {
 }
 
 class _AddPropertyState extends State<AddProperty> {
+  var rentalType;
+  //Dropdown menu items
+  List<String> _rentals = <String>[
+    'Apartments',
+    'University Hostels',
+    'Wedding homes',
+    'Luxury Homes',
+    'Bedsitters',
+    'Single Family Homes'
+  ];
+
   //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
   final CollectionReference reference =
       FirebaseFirestore.instance.collection('Apartments');
+  final CollectionReference referenceBed =
+  FirebaseFirestore.instance.collection('Bedsitters');
+  final CollectionReference referenceSingle =
+  FirebaseFirestore.instance.collection('Single family homes');
+  final CollectionReference referenceUni =
+  FirebaseFirestore.instance.collection('University hostels');
+  final CollectionReference referenceWed =
+  FirebaseFirestore.instance.collection('Wedding homes');
+  final CollectionReference referenceLux =
+  FirebaseFirestore.instance.collection('Luxury Homes');
+
 //--------------VARIABLES-------------------------------------------
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController propertyNameController = TextEditingController();
@@ -138,31 +160,67 @@ class _AddPropertyState extends State<AddProperty> {
               ),
             ),
 
-            //-------------------*********THE START OF THE TEXTFIELDS***********--------------------
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              //--------THIS TEXTFORMFIELD IS FOR THE PROPERTY NAME
-              child: TextFormField(
-                controller: propertyNameController,
-                decoration: InputDecoration(hintText: 'Property name'),
-                validator: (value) {
-                  //----------IF THE VALUE OF THE TEXTFIELD IS EMPTY, THEN RETURN AN ERROR MESSAGE------
-                  if (value!.isEmpty) {
-                    Fluttertoast.showToast(
-                      msg: "You must enter the property name",
-                      fontSize: 16.0,
-                      textColor: Colors.white,
-                      backgroundColor: Colors.black,
-                    );
-                  } else if (value.length > 30) {
-                    Fluttertoast.showToast(
-                      msg: "Property name cannot be more than 30 characters",
-                      fontSize: 16.0,
-                      textColor: Colors.white,
-                      backgroundColor: Colors.black,
-                    );
-                  }
+            //--------------------DROPDOWN BUTTON--------------
+            Container(
+              margin: EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              decoration: BoxDecoration(
+
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: Colors.white, width: 4)
+              ),
+              child: DropdownButton(
+                items: _rentals
+                    .map(
+                      (value) => DropdownMenuItem(
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.black45),
+                        ),
+                        value: value,
+                      ),
+                    )
+                    .toList(),
+                onChanged: (selectedRental) {
+                  setState(() {
+                    rentalType = selectedRental;
+                  });
+                  print(rentalType);
                 },
+                value: rentalType,
+                isExpanded: false,
+                hint: Text('Type of Rental'),
+              ),
+            ),
+//----------------------DROPDOWN BUTTON---------------------------------------
+            //-------------------*********THE START OF THE TEXTFIELDS***********--------------------
+            Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                //--------THIS TEXTFORMFIELD IS FOR THE PROPERTY NAME
+                child: TextFormField(
+                  controller: propertyNameController,
+                  decoration: InputDecoration(hintText: 'Property name'),
+                  validator: (value) {
+                    //----------IF THE VALUE OF THE TEXTFIELD IS EMPTY, THEN RETURN AN ERROR MESSAGE------
+                    if (value!.isEmpty) {
+                      Fluttertoast.showToast(
+                        msg: "You must enter the property name",
+                        fontSize: 16.0,
+                        textColor: Colors.white,
+                        backgroundColor: Colors.black,
+                      );
+                    } else if (value.length > 30) {
+                      Fluttertoast.showToast(
+                        msg: "Property name cannot be more than 30 characters",
+                        fontSize: 16.0,
+                        textColor: Colors.white,
+                        backgroundColor: Colors.black,
+                      );
+                    }
+                  },
+                ),
               ),
             ),
             Padding(
@@ -268,7 +326,8 @@ class _AddPropertyState extends State<AddProperty> {
                   if (imageUrl.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Please upload an image '),
+                        content: Text(
+                            'Please upload an image and check whether your phone number has more than 10 characters'),
                       ),
                     );
                     return;
@@ -288,7 +347,26 @@ class _AddPropertyState extends State<AddProperty> {
                       'location': propertyLocation,
                     };
                     //------------ADD A NEW ITEM------------
-                    reference.add(dataToSend);
+                    if(rentalType == 'Apartments' ){
+                      reference.add(dataToSend);
+                    }
+                    else if(rentalType == 'University Hostels' ){
+                      referenceUni.add(dataToSend);
+                    }
+                    else if(rentalType == 'Wedding homes'){
+                      referenceWed.add(dataToSend);
+                    }
+                    else if(rentalType == 'Luxury Homes'){
+                      referenceLux.add(dataToSend);
+                    }
+                    else if(rentalType == 'Bedsitters'){
+                      referenceBed.add(dataToSend);
+                    }
+                    else if (rentalType == 'Single Family Homes'){
+                      referenceSingle.add(dataToSend);
+                    }
+
+
                   }
 
                   Fluttertoast.showToast(

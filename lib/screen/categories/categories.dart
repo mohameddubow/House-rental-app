@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:house_rentall_app/model/house_model.dart';
 
-
 //--------------------THIS PAGE CONSTITUTES THE CATEGORIES SCREEN--------------------------
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -20,7 +19,6 @@ class _CategoriesState extends State<Categories> {
         child: GridView.count(
           crossAxisCount: 2,
           children: [
-
             //This contains an implementation of the Card class,...mulTiple Cards are created from the same class
             MyCard(
               title: 'Apartments',
@@ -59,7 +57,6 @@ class _CategoriesState extends State<Categories> {
   }
 }
 
-
 //-------------------------------------------------------------------------------------------------
 
 //This is a refactored card,...I created a Card model class for the Categories screen so that I can
@@ -83,8 +80,8 @@ class MyCard extends StatelessWidget {
         Navigator.pushNamed(context, House.id);
       },
       child:
-      //----------------------CARD------------
-      Card(
+          //----------------------CARD------------
+          Card(
         margin: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
@@ -127,8 +124,8 @@ class MyCard1 extends StatelessWidget {
         Navigator.pushNamed(context, BedSitter.id);
       },
       child:
-      //----------------------CARD------------
-      Card(
+          //----------------------CARD------------
+          Card(
         margin: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
@@ -171,8 +168,8 @@ class MyCard2 extends StatelessWidget {
         Navigator.pushNamed(context, LuxuryHomes.id);
       },
       child:
-      //----------------------CARD------------
-      Card(
+          //----------------------CARD------------
+          Card(
         margin: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
@@ -215,8 +212,8 @@ class MyCard3 extends StatelessWidget {
         Navigator.pushNamed(context, SingleFamilyHomes.id);
       },
       child:
-      //----------------------CARD------------
-      Card(
+          //----------------------CARD------------
+          Card(
         margin: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
@@ -259,8 +256,8 @@ class MyCard4 extends StatelessWidget {
         Navigator.pushNamed(context, UniversityHotels.id);
       },
       child:
-      //----------------------CARD------------
-      Card(
+          //----------------------CARD------------
+          Card(
         margin: EdgeInsets.all(8.0),
         child: Center(
           child: Column(
@@ -303,8 +300,8 @@ class MyCard5 extends StatelessWidget {
         Navigator.pushNamed(context, WeddingHomes.id);
       },
       child:
-      //----------------------CARD------------
-      Card(
+          //----------------------CARD------------
+          Card(
         margin: EdgeInsets.all(8.0),
         child: Center(
           child: Column(

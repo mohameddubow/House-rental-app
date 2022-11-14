@@ -4,7 +4,6 @@ import 'package:house_rentall_app/screen/home/home_page.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-
 //--------------------------******REGISTRATION SCREEN*******-----------------------------------------
 class RegistrationScreen extends StatefulWidget {
   static String id = 'registration_screen';
@@ -139,9 +138,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           //----IF THE NEW USER IS NOT EQUAL TO NULL, THEN PROCEED TO THE HOMESCREEN
                           if (newUser != null) {
                             Fluttertoast.showToast(
-                              msg: "Successfull Registration",
-                              textColor: Colors.black,
-                              backgroundColor: Colors.white,
+                              msg: "Successfully Registered",
+                              textColor: Colors.white,
+                              backgroundColor: Colors.black,
                             );
                             Navigator.pushNamed(context, HomePage.id);
                           }

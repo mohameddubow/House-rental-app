@@ -16,8 +16,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body:
-      //--------THE BACKGROUND IMAGE OF THE SCREEN---------------
-      Container(
+          //--------THE BACKGROUND IMAGE OF THE SCREEN---------------
+          Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/images/rental7.jpg'),

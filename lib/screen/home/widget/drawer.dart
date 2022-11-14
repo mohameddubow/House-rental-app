@@ -51,11 +51,10 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
           ),
-         //----------------------ADD MY PROPERTY------------------------
+          //----------------------ADD MY PROPERTY------------------------
           InkWell(
             onTap: () {
               UserManagement().authorizeAccess(context);
-              //Navigator.pushNamed(context, AddProperty.id);
             },
             child: ListTile(
               title: Text('Add My Property'),

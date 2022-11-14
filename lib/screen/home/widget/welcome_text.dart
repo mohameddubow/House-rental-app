@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 //------THIS DISPLAYS TWO TEXTS,'HELLO DEAR MEMBER' AND 'FIND YOUR SWEET HOME'
 class WelcomeText extends StatelessWidget {
   @override

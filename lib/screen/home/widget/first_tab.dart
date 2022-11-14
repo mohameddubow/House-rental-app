@@ -71,17 +71,17 @@ class First_tab_page extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(15.0),
           child:
-          //---------------AN IMPLEMENTATION OF THE HOMECARD CLASS IS MADE-------------------
-          //----------------THE LISTVIEW.BUILDER RETURNS A LIST OF THE HOMECARDS AUTOMATICALLY--------------------
-          ListView.builder(
+              //---------------AN IMPLEMENTATION OF THE HOMECARD CLASS IS MADE-------------------
+              //----------------THE LISTVIEW.BUILDER RETURNS A LIST OF THE HOMECARDS AUTOMATICALLY--------------------
+              ListView.builder(
             shrinkWrap: true,
             physics: ScrollPhysics(),
             itemCount: items.length,
             itemBuilder: (context, index) {
               final item = items[index];
               return
-              //------------------------THE HOMECARD---------------------------------------
-                HomeCard(
+                  //------------------------THE HOMECARD---------------------------------------
+                  HomeCard(
                 imageUrl: item.imageUrl,
                 price: item.price,
                 location: item.location,
