@@ -3,12 +3,14 @@
 class Item {
   final String imageUrl;
   final String price;
+  final name;
   final location;
   final phone;
 
   const Item(
       {required this.imageUrl,
       required this.price,
+        required this.name,
       required this.location,
       required this.phone});
 }

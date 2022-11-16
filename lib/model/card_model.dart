@@ -24,8 +24,12 @@ class CardModel extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, DetailPage.id, arguments: {
           //---------------THIS PASSES THE DATA TO THE NEXT SCREEN, THE DETAILPAGE---------
-          'newPrice': price,
-          'phone ': phone,
+          'price': price,
+          'phone': phone,
+          'name': name,
+          'location': loc,
+          'image': img,
+
         });
       },
       child: Container(

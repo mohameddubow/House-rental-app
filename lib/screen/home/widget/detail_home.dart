@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_rentall_app/screen/pages/mpesanumber.dart';
 
 //------------------CARD DETAILS PAGE----------------------------------------
 class DetailHome extends StatefulWidget {
@@ -15,9 +16,11 @@ class _DetailHomeState extends State<DetailHome> {
     //-----------------------------------------------------------------------------------------
     //THIS RECEIVES DATA FROM THE PREVIOUS SCREEN,
     final routeData = ModalRoute.of(context)!.settings.arguments as Map;
-    final newImageUrl = routeData['ImageUrl'];
+    final newName = routeData['name'];
+    final newImage = routeData['image'];
     final newPrice = routeData['price'];
     final newPhone = routeData['phone'];
+    final newLocation= routeData['location'];
 //----------------------------------------------------------------------------------------------
 
     return Scaffold(
@@ -39,7 +42,7 @@ class _DetailHomeState extends State<DetailHome> {
                 height: 350,
                 width: 400,
                 child: Image.asset(
-                  'assets/images/rental1.jpg',
+                  newImage,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -124,7 +127,14 @@ class _DetailHomeState extends State<DetailHome> {
               //THIS SETS THE STYLE AND MEASUREMENTS FOR THE BUTTON
               child: ElevatedButton(
                 //-----------------Button for Booking Fuctionality and Mpesa-------------------------
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, MpesaNumberScreen.id, arguments: {
+                    'name': newName,
+                    'price': newPrice,
+                    'phone': newPhone,
+                    'location': newLocation,
+                  });
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),

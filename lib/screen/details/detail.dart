@@ -17,8 +17,12 @@ class _DetailPageState extends State<DetailPage> {
 //-----------------------------------------------------------------------------
     //RECEIVING DATA FROM THE PREVIOUS SCREEN, THE CARDMODEL SCREEN
     final routeData = ModalRoute.of(context)!.settings.arguments as Map;
-    final newPrice = routeData['newPrice'];
+    final newPrice = routeData['price'];
     final newPhone = routeData['phone'];
+    final newLocation = routeData['location'];
+    final newName = routeData['name'];
+    final newImage = routeData['image'];
+
 
 //THIS BUILDS THE DETAILS PAGE
     return Scaffold(
@@ -41,8 +45,8 @@ class _DetailPageState extends State<DetailPage> {
             Container(
               height: 350,
               width: 400,
-              child: Image.asset(
-                'assets/images/rental1.jpg',
+              child: Image.network(
+                newImage,
                 fit: BoxFit.cover,
               ),
             ),
@@ -71,7 +75,7 @@ class _DetailPageState extends State<DetailPage> {
                   //--------------------------------------------------------------
                   //THIS DISPLAYS THE PHONE NUMBER OF THE LANDLORD
                   Text(
-                    '${newPhone}',
+                    '$newPhone',
                     style: Theme.of(context)
                         .textTheme
                         .bodyText1!
@@ -150,7 +154,12 @@ class _DetailPageState extends State<DetailPage> {
                   //THIS SETS THE STYLE AND MEASUREMENTS FOR THE BUTTON
                   ElevatedButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, MpesaNumberScreen.id);
+                  Navigator.pushNamed(context, MpesaNumberScreen.id, arguments: {
+                    'price': newPrice,
+                    'phone': newPhone,
+                    'name': newName,
+                    'location': newLocation,
+                  });
                 },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(

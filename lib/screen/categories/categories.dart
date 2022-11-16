@@ -96,7 +96,7 @@ class MyCard extends StatelessWidget {
               //-----------------TITLE--------------------
               Text(
                 title,
-                style: TextStyle(fontSize: 17.0),
+                style: TextStyle(fontSize: 15.0),
               ),
             ],
           ),
@@ -140,7 +140,7 @@ class MyCard1 extends StatelessWidget {
               //-----------------TITLE--------------------
               Text(
                 title,
-                style: TextStyle(fontSize: 12.0),
+                style: TextStyle(fontSize: 15.0),
               ),
             ],
           ),
@@ -184,7 +184,7 @@ class MyCard2 extends StatelessWidget {
               //-----------------TITLE--------------------
               Text(
                 title,
-                style: TextStyle(fontSize: 12.0),
+                style: TextStyle(fontSize: 15.0),
               ),
             ],
           ),
@@ -228,7 +228,7 @@ class MyCard3 extends StatelessWidget {
               //-----------------TITLE--------------------
               Text(
                 title,
-                style: TextStyle(fontSize: 12.0),
+                style: TextStyle(fontSize: 15.0),
               ),
             ],
           ),
@@ -272,7 +272,7 @@ class MyCard4 extends StatelessWidget {
               //-----------------TITLE--------------------
               Text(
                 title,
-                style: TextStyle(fontSize: 12.0),
+                style: TextStyle(fontSize: 15.0),
               ),
             ],
           ),
@@ -316,7 +316,7 @@ class MyCard5 extends StatelessWidget {
               //-----------------TITLE--------------------
               Text(
                 title,
-                style: TextStyle(fontSize: 12.0),
+                style: TextStyle(fontSize: 15.0),
               ),
             ],
           ),

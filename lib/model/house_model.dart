@@ -10,7 +10,7 @@ class House extends StatefulWidget {
   @override
   State<House> createState() => _HouseState();
 }
-
+//------------------------------APARTMENTS------------------------------------------------
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
 class _HouseState extends State<House> {
   //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
@@ -87,7 +87,7 @@ class BedSitter extends StatefulWidget {
 
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
 class _BedSitterState extends State<BedSitter> {
-  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
+  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'bedsitters',
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
@@ -152,6 +152,7 @@ class _BedSitterState extends State<BedSitter> {
   }
 }
 
+//------------------------LUXURY HOMES CLASS-------------------------------------------------
 class LuxuryHomes extends StatefulWidget {
   static String id = 'luxury_homes_screen';
 
@@ -161,7 +162,7 @@ class LuxuryHomes extends StatefulWidget {
 
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
 class _LuxuryHomesState extends State<LuxuryHomes> {
-  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
+  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'LuxuryHomes',
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
@@ -226,6 +227,8 @@ class _LuxuryHomesState extends State<LuxuryHomes> {
   }
 }
 
+
+//--------------------------SINGLE FAMILY HOMES-----------------------------------------------
 class SingleFamilyHomes extends StatefulWidget {
   static String id = 'single_family_home_screen';
 
@@ -235,7 +238,7 @@ class SingleFamilyHomes extends StatefulWidget {
 
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
 class _SingleFamilyHomesState extends State<SingleFamilyHomes> {
-  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
+  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'SingleFamilyHomes',
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
@@ -300,6 +303,7 @@ class _SingleFamilyHomesState extends State<SingleFamilyHomes> {
   }
 }
 
+//------------------------------UNIVERSITY HOSTELS------------------------------------------
 class UniversityHotels extends StatefulWidget {
   static String id = 'university_hotels';
 
@@ -309,7 +313,7 @@ class UniversityHotels extends StatefulWidget {
 
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
 class _UniversityHotelsState extends State<UniversityHotels> {
-  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
+  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'UniversityHostels',
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =
@@ -374,6 +378,7 @@ class _UniversityHotelsState extends State<UniversityHotels> {
   }
 }
 
+//--------------------------WEDDING HOMES-------------------------------------------------
 class WeddingHomes extends StatefulWidget {
   static String id = 'wedding_homes';
 
@@ -383,7 +388,7 @@ class WeddingHomes extends StatefulWidget {
 
 //---------------THE LOGIC FOR THE FIREBASE DATA RETRIEVAL RESIDES HERE------------------
 class _WeddingHomesState extends State<WeddingHomes> {
-  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'apartments',
+  //------HERE WE ARE MAKING A REFERENCE TO A COLLECTION IN THE DATABASE CALLED 'wedding homes',
   // SO WE ASSIGN THE LOGIC TO A VARIABLE CALLED 'reference'
 //  final Reference storageRef = FirebaseStorage.instance.ref();
   final CollectionReference reference =

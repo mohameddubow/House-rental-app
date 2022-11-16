@@ -12,6 +12,7 @@ import 'package:house_rentall_app/screen/pages/mpesanumber.dart';
 import 'package:house_rentall_app/screen/pages/registration_screen.dart';
 import 'package:house_rentall_app/screen/pages/welcome_screen.dart';
 import 'package:mpesa_flutter_plugin/mpesa_flutter_plugin.dart';
+import 'package:house_rentall_app/screen/pages/receipt_screen.dart';
 
 String kConsumerKey = "fe3iY8iLijqGbWwnJjZ0FQaqAOOmgT4x";
 String kConsumerSecret = "HQuYU8v5am6LcO73";
@@ -63,6 +64,7 @@ class MyApp extends StatelessWidget {
         AboutUs.id: (context) => AboutUs(),
         DetailHome.id: (context) => DetailHome(),
         MpesaNumberScreen.id: (context) => MpesaNumberScreen(),
+        ReceiptScreen.id:(context)=> ReceiptScreen(),
       },
     );
   }

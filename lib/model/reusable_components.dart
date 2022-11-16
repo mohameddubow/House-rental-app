@@ -58,15 +58,19 @@ class NumberTextField extends StatelessWidget {
           filled: true,
           fillColor: Color(0xFFBEBF7),
           labelText: labelText,
-          labelStyle: TextStyle(color: Colors.black, fontSize: 20),
+          labelStyle: TextStyle(color: Colors.black87, fontSize: 20),
           hintText: hintText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          enabledBorder: OutlineInputBorder(
+          disabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: Color(0xFFBEBF7), width: 1.5),
+            borderSide: BorderSide(color: Colors.orange, width: 1.5),
           ),
+          //enabledBorder: OutlineInputBorder(
+           // borderRadius: BorderRadius.circular(10),
+          //  borderSide: BorderSide(color: Color(0xFFBEBF7), width: 1.5),
+         // ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(color: Colors.orange, width: 1.5),

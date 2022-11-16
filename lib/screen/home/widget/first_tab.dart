@@ -16,41 +16,49 @@ class First_tab_page extends StatelessWidget {
     Item(
         imageUrl: ("assets/images/rental20.jpg"),
         location: 'Bungalow, Westlands',
+        name: 'Alladin homes',
         price: 'Kshs 25,000 p.m',
         phone: '0722347683'),
     Item(
         imageUrl: ("assets/images/rental21.jpg"),
         location: 'Luxury Home, Muthaiga',
+        name:'Gharama homes',
         price: 'Kshs 30,000 p.m',
         phone: '0722347683'),
     Item(
         imageUrl: ("assets/images/rental22.jpg"),
         location: 'Single Family, Rongai',
+        name:'Gia Apartments',
         price: 'Kshs 45,000 p.m',
         phone: '0722347683'),
     Item(
         imageUrl: ("assets/images/rental27.jpg"),
         location: 'Villa, Nyali',
+        name:'Zana houses',
         price: 'Kshs 72,000 p.m',
         phone: '0722347683'),
     Item(
         imageUrl: ("assets/images/rental28.jpg"),
         location: 'Wedding home, Nakuru',
+        name:'Tuko homes',
         price: 'Kshs 55,000 p.m',
         phone: '0722347683'),
     Item(
         imageUrl: ("assets/images/rental30.jpg"),
         location: 'Luxury Villa, Diani',
+        name:'Uhuru Villas',
         price: 'Kshs 92,000 p.m',
         phone: '0722347683'),
     Item(
         imageUrl: ("assets/images/rental17.jpg"),
         location: 'Bungalow, Eldoret',
+        name:'Kwenyu houses',
         price: 'Kshs 86,000 p.m',
         phone: '0722347683'),
     Item(
         imageUrl: ("assets/images/rental24.jpg"),
-        location: 'Luxury home, Kren',
+        location: 'Luxury home, Karen',
+        name:'Jubilee Apartments',
         price: 'Kshs 90,000  p.m',
         phone: '0722347683'),
   ];
@@ -84,6 +92,7 @@ class First_tab_page extends StatelessWidget {
                   HomeCard(
                 imageUrl: item.imageUrl,
                 price: item.price,
+                name: item.name,
                 location: item.location,
                 phone: item.phone,
               );
@@ -101,6 +110,7 @@ class First_tab_page extends StatelessWidget {
 class HomeCard extends StatelessWidget {
   final String imageUrl;
   final String price;
+final name;
   final location;
   final phone;
 
@@ -108,6 +118,7 @@ class HomeCard extends StatelessWidget {
   const HomeCard(
       {required this.imageUrl,
       required this.price,
+        required this.name,
       required this.location,
       required this.phone});
 //---------------------------------------------------------------------------------------------------
@@ -119,9 +130,12 @@ class HomeCard extends StatelessWidget {
 //----------------------------------------------------------------------------------------
         //THIS PUSHES OR PASSES OUR DATA TO THE NEXT SCREEN, THE DETAIL PAGE
         Navigator.pushNamed(context, DetailHome.id, arguments: {
-          'imageUrl': imageUrl,
-          'phone ': phone,
+          'image': imageUrl,
+          'phone': phone,
+          'name': name,
           'price': price,
+          'location': location,
+
         });
       },
       child: Container(
