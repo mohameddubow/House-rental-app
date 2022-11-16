@@ -6,7 +6,7 @@ class CardModel extends StatelessWidget {
   late String name;
   late String loc;
   late String img;
-  late var price;
+  late String price;
   late String phone;
 
   CardModel(
@@ -24,8 +24,8 @@ class CardModel extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(context, DetailPage.id, arguments: {
           //---------------THIS PASSES THE DATA TO THE NEXT SCREEN, THE DETAILPAGE---------
-          'newprice': price,
-          'newphone ': phone,
+          'newPrice': price,
+          'phone ': phone,
         });
       },
       child: Container(
@@ -68,7 +68,7 @@ class CardModel extends StatelessWidget {
                     Spacer(),
                     Text(
                       //-----------DISPLAYS THE PRICE----------------
-                      ('Kshs $price'.toString()),
+                      ('Kshs $price'),
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,

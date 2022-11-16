@@ -8,12 +8,22 @@ import 'package:house_rentall_app/screen/home/widget/detail_home.dart';
 import 'package:house_rentall_app/screen/pages/add_properties.dart';
 import 'package:house_rentall_app/screen/pages/contact_us.dart';
 import 'package:house_rentall_app/screen/pages/login_screen.dart';
+import 'package:house_rentall_app/screen/pages/mpesanumber.dart';
 import 'package:house_rentall_app/screen/pages/registration_screen.dart';
 import 'package:house_rentall_app/screen/pages/welcome_screen.dart';
+import 'package:mpesa_flutter_plugin/mpesa_flutter_plugin.dart';
+
+String kConsumerKey = "fe3iY8iLijqGbWwnJjZ0FQaqAOOmgT4x";
+String kConsumerSecret = "HQuYU8v5am6LcO73";
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
+  //For MPESA
+  MpesaFlutterPlugin.setConsumerKey(kConsumerKey);
+  MpesaFlutterPlugin.setConsumerSecret(kConsumerSecret);
+
   runApp(MyApp());
 }
 
@@ -52,6 +62,7 @@ class MyApp extends StatelessWidget {
         ContactUs.id: (context) => ContactUs(),
         AboutUs.id: (context) => AboutUs(),
         DetailHome.id: (context) => DetailHome(),
+        MpesaNumberScreen.id: (context) => MpesaNumberScreen(),
       },
     );
   }

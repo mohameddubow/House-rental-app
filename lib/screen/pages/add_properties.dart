@@ -33,15 +33,15 @@ class _AddPropertyState extends State<AddProperty> {
   final CollectionReference reference =
       FirebaseFirestore.instance.collection('Apartments');
   final CollectionReference referenceBed =
-  FirebaseFirestore.instance.collection('Bedsitters');
+      FirebaseFirestore.instance.collection('Bedsitters');
   final CollectionReference referenceSingle =
-  FirebaseFirestore.instance.collection('Single family homes');
+      FirebaseFirestore.instance.collection('Single family homes');
   final CollectionReference referenceUni =
-  FirebaseFirestore.instance.collection('University hostels');
+      FirebaseFirestore.instance.collection('University hostels');
   final CollectionReference referenceWed =
-  FirebaseFirestore.instance.collection('Wedding homes');
+      FirebaseFirestore.instance.collection('Wedding homes');
   final CollectionReference referenceLux =
-  FirebaseFirestore.instance.collection('Luxury Homes');
+      FirebaseFirestore.instance.collection('Luxury Homes');
 
 //--------------VARIABLES-------------------------------------------
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -163,12 +163,10 @@ class _AddPropertyState extends State<AddProperty> {
             //--------------------DROPDOWN BUTTON--------------
             Container(
               margin: EdgeInsets.all(20),
-              padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+              padding: EdgeInsets.symmetric(horizontal: 11, vertical: 2),
               decoration: BoxDecoration(
-
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.white, width: 4)
-              ),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: Colors.deepOrange, width: 1)),
               child: DropdownButton(
                 items: _rentals
                     .map(
@@ -189,7 +187,10 @@ class _AddPropertyState extends State<AddProperty> {
                 },
                 value: rentalType,
                 isExpanded: false,
-                hint: Text('Type of Rental'),
+                hint: Text(
+                  'Choose Type of Rental',
+                  style: TextStyle(color: Colors.blue),
+                ),
               ),
             ),
 //----------------------DROPDOWN BUTTON---------------------------------------
@@ -347,26 +348,19 @@ class _AddPropertyState extends State<AddProperty> {
                       'location': propertyLocation,
                     };
                     //------------ADD A NEW ITEM------------
-                    if(rentalType == 'Apartments' ){
+                    if (rentalType == 'Apartments') {
                       reference.add(dataToSend);
-                    }
-                    else if(rentalType == 'University Hostels' ){
+                    } else if (rentalType == 'University Hostels') {
                       referenceUni.add(dataToSend);
-                    }
-                    else if(rentalType == 'Wedding homes'){
+                    } else if (rentalType == 'Wedding homes') {
                       referenceWed.add(dataToSend);
-                    }
-                    else if(rentalType == 'Luxury Homes'){
+                    } else if (rentalType == 'Luxury Homes') {
                       referenceLux.add(dataToSend);
-                    }
-                    else if(rentalType == 'Bedsitters'){
+                    } else if (rentalType == 'Bedsitters') {
                       referenceBed.add(dataToSend);
-                    }
-                    else if (rentalType == 'Single Family Homes'){
+                    } else if (rentalType == 'Single Family Homes') {
                       referenceSingle.add(dataToSend);
                     }
-
-
                   }
 
                   Fluttertoast.showToast(

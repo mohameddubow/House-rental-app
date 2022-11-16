@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:house_rentall_app/screen/home/widget/detail_home.dart';
 import '/screen/home/widget/welcome_text.dart';
-import '/screen/home/widget/search_input.dart';
+import '/screen/home/widget/carousel.dart';
 import 'package:house_rentall_app/model/items_model.dart';
 
 //----------HOMEPAGE/LANDING PAGE----------------------------
@@ -61,8 +61,8 @@ class First_tab_page extends StatelessWidget {
       //-------------------------------------------------------------------------------------
       //LISTVIEW OF THE CONTENTS ON THE HOMEPAGE
       children: [
-        WelcomeText(),
-        SearchInput(),
+          WelcomeText(),
+     //customCarousel(),
         Divider(
           height: 30,
           thickness: 1.5,

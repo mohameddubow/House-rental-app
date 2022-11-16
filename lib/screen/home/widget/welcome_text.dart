@@ -11,7 +11,7 @@ class WelcomeText extends StatelessWidget {
         children: [
           //------------------TEXT 1--------------------------------
           Text(
-            'Hello Dear Member',
+            'Hello Dear member',
             style: Theme.of(context)
                 .textTheme
                 .bodyText1!

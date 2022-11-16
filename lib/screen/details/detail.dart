@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:house_rentall_app/screen/pages/mpesanumber.dart';
 
 //--------------------------------------------------------------------------------------------------
 //THIS IS THE DETAILS PAGE, YOU COME TO THIS PAGE AFTER PRESSING ONE OF THE RENTALS
@@ -16,7 +17,7 @@ class _DetailPageState extends State<DetailPage> {
 //-----------------------------------------------------------------------------
     //RECEIVING DATA FROM THE PREVIOUS SCREEN, THE CARDMODEL SCREEN
     final routeData = ModalRoute.of(context)!.settings.arguments as Map;
-    final newPrice = routeData['price'];
+    final newPrice = routeData['newPrice'];
     final newPhone = routeData['phone'];
 
 //THIS BUILDS THE DETAILS PAGE
@@ -103,7 +104,7 @@ class _DetailPageState extends State<DetailPage> {
                         //--------------------------------------------------------
                         //THIS DISPLAYS THE RENT PRICE ON THE SCREEN
                         TextSpan(
-                          text: 'Ksh $newPrice'.toString(),
+                          text: 'Ksh $newPrice',
                           style:
                               Theme.of(context).textTheme.headline1!.copyWith(
                                     fontSize: 16,
@@ -148,7 +149,9 @@ class _DetailPageState extends State<DetailPage> {
                   //---------------------------------------------------------------
                   //THIS SETS THE STYLE AND MEASUREMENTS FOR THE BUTTON
                   ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, MpesaNumberScreen.id);
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
